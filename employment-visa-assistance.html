@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Employment Visa Assistance | Rantharu Travels</title>
+  <meta
+    name="description"
+    content="Rantharu Travels provides professional UAE employment visa assistance, document guidance and company visa processing support."
+  />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    :root{--gold:#d4af37;--dark:#0b0b0b;--card:#171717;--muted:#cfcfcf}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:#000;
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(212,175,55,.35);
+    }
+
+    .nav{
+      max-width:1150px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px 20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .brand img{
+      width:76px;
+      height:76px;
+      border-radius:50%;
+      background:#fff;
+      padding:4px;
+      object-fit:contain;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
+    }
+
+    .brand-text h1{
+      color:#fff;
+      font-size:36px;
+      font-weight:800;
+      letter-spacing:3px;
+      margin:0;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .brand-text span{
+      display:block;
+      text-align:right;
+      color:var(--gold);
+      font-size:14px;
+      letter-spacing:7px;
+      margin-top:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    nav a{margin-left:22px;color:#eee;font-weight:600;font-size:15px}
+    nav a:hover{color:var(--gold)}
+
+    .hero{
+      min-height:78vh;display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:90px 20px;position:relative;overflow:hidden;
+      background:radial-gradient(circle at top,#2b2410 0,#0b0b0b 45%,#000 100%)
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.86)),
+        url('assets/emp1.jpg')
+        center/cover;
+      opacity:.42
+    }
+    .hero-content{position:relative;max-width:920px}
+    .hero-logo{
+      width:150px;height:150px;border-radius:50%;background:#fff;padding:8px;
+      margin:0 auto 22px;box-shadow:0 0 35px rgba(212,175,55,.45)
+    }
+    .badge{
+      display:inline-block;border:1px solid rgba(212,175,55,.55);
+      color:var(--gold);padding:7px 14px;border-radius:50px;
+      font-size:14px;font-weight:800;margin-bottom:18px;background:rgba(0,0,0,.35)
+    }
+    .hero h1{
+      font-size:clamp(34px,6vw,68px);line-height:1.05;margin-bottom:16px;
+      text-transform:uppercase
+    }
+    .hero h1 span{color:var(--gold)}
+    .hero p{
+      font-size:clamp(17px,2.2vw,22px);color:#eee;
+      max-width:780px;margin:0 auto 28px
+    }
+    .buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{
+      padding:13px 24px;border-radius:8px;font-weight:800;
+      display:inline-block;transition:.25s
+    }
+    .btn-gold{background:var(--gold);color:#000}
+    .btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(212,175,55,.3)}
+    .btn-outline{border:1px solid var(--gold);color:var(--gold)}
+    .btn-outline:hover{background:var(--gold);color:#000}
+
+    section{padding:70px 20px}
+    .container{max-width:1150px;margin:auto}
+    .section-title{text-align:center;margin-bottom:35px}
+    .section-title h2{font-size:34px;color:var(--gold);margin-bottom:8px}
+    .section-title p{color:var(--muted)}
+
+    .intro{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center
+    }
+    .panel{
+      background:linear-gradient(180deg,#1c1c1c,#111);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:18px;padding:28px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25)
+    }
+    .panel h2,.panel h3{color:var(--gold);margin-bottom:12px}
+    .panel p{color:#ddd;margin-bottom:12px}
+    .highlight{
+      border-left:4px solid var(--gold);padding:14px 16px;
+      background:rgba(212,175,55,.08);border-radius:10px;color:#eee;margin-top:14px
+    }
+
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px
+    }
+    .card{
+      background:linear-gradient(180deg,#1c1c1c,#111);
+      border:1px solid rgba(212,175,55,.22);
+      border-radius:16px;padding:24px;
+      box-shadow:0 10px 25px rgba(0,0,0,.25)
+    }
+    .card h3{color:var(--gold);margin-bottom:8px}
+    .card p,.card li{color:#d8d8d8;font-size:15px}
+    .card ul{padding-left:20px}
+
+    .steps{counter-reset:step}
+    .step{
+      position:relative;padding-left:70px;margin-bottom:18px;min-height:54px
+    }
+    .step::before{
+      counter-increment:step;content:counter(step);
+      position:absolute;left:0;top:0;width:46px;height:46px;border-radius:50%;
+      background:var(--gold);color:#000;display:flex;align-items:center;
+      justify-content:center;font-weight:900;box-shadow:0 0 22px rgba(212,175,55,.35)
+    }
+    .step h3{color:#fff;margin-bottom:4px}
+    .step p{color:#d8d8d8}
+
+    .cta{
+      background:linear-gradient(135deg,#d4af37,#8a6d18);
+      color:#000;text-align:center
+    }
+    .cta h2{font-size:34px;margin-bottom:10px}
+    .cta p{max-width:720px;margin:auto auto 22px;font-weight:600}
+    .cta .btn{background:#000;color:#d4af37}
+
+    .contact-box{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px
+    }
+    .contact-item{
+      background:#151515;border:1px solid #333;border-radius:14px;padding:22px
+    }
+    .contact-item b{color:var(--gold)}
+
+    footer{
+      background:#000;text-align:center;padding:28px 20px;
+      border-top:1px solid rgba(212,175,55,.25);color:#bbb
+    }
+    .whatsapp-float{
+      position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;
+      padding:14px 18px;border-radius:50px;font-weight:800;
+      box-shadow:0 8px 25px rgba(0,0,0,.35);z-index:999
+    }
+
+    @media(max-width:760px){
+      nav{display:none}
+      .nav{justify-content:center;padding:9px 12px}
+      .brand{gap:12px}
+      .brand img{width:58px;height:58px}
+      .brand-text h1{font-size:25px;letter-spacing:2px}
+      .brand-text span{font-size:10px;letter-spacing:5px;margin-top:8px}
+      .intro{grid-template-columns:1fr}
+      .hero-logo{width:130px;height:130px}
+      section{padding:50px 16px}
+      .step{padding-left:58px}
+    }
+
+    @media(max-width:420px){
+      .brand img{width:50px;height:50px}
+      .brand-text h1{font-size:20px;letter-spacing:1.4px}
+      .brand-text span{font-size:9px;letter-spacing:4px;margin-top:7px}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Rantharu Travels Logo" />
+        <div class="brand-text">
+          <h1>RANTHARU TRAVELS</h1>
+          <span>PVT LTD</span>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <img class="hero-logo" src="assets/logo.png" alt="Rantharu Travels Logo" />
+
+      <h1>
+        Employment Visa<br />
+        <span>Assistance</span>
+      </h1>
+
+      <p>
+        Professional guidance for UAE company employment visa processing, document preparation and step-by-step support.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-gold" href="https://wa.me/971542973875?text=Hello%20Rantharu%20Travels%2C%20I%20need%20Employment%20Visa%20Assistance">WhatsApp Us</a>
+        <a class="btn btn-outline" href="#details">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="details">
+    <div class="container intro">
+      <div class="panel">
+        <h2>Trusted Support for Your UAE Career Journey</h2>
+        <p>
+          Rantharu Travels helps clients with clear guidance and document support for UAE employment visa related processes.
+          We assist you from the first inquiry until the required steps are completed with proper coordination.
+        </p>
+        <p>
+          Our team will guide you about the documents, processing steps and communication needed for company employment visa support.
+        </p>
+        <div class="highlight">
+          Salary, job position and visa approval depend on company requirements, candidate qualifications and official authority decisions.
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Best For</h3>
+        <p>People who are planning to work in the UAE and need trusted support for company visa processing guidance.</p>
+        <br />
+        <h3>We Focus On</h3>
+        <p>Clear communication, safe document handling, honest updates and professional service until the process is completed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>What We Assist With</h2>
+        <p>Complete support for your employment visa process</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Document Guidance</h3>
+          <p>We guide you to prepare the required passport copy, photo and other necessary documents correctly.</p>
+        </div>
+
+        <div class="card">
+          <h3>Company Visa Coordination</h3>
+          <p>Support for communication and coordination related to company employment visa processing.</p>
+        </div>
+
+        <div class="card">
+          <h3>Status Updates</h3>
+          <p>Clear updates during the process so you know the current stage and next step.</p>
+        </div>
+
+        <div class="card">
+          <h3>Travel Support</h3>
+          <p>Additional support can be arranged for air ticket booking, airport pickup and accommodation guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container intro">
+      <div class="panel steps">
+        <h2>How the Process Works</h2>
+
+        <div class="step">
+          <h3>Send Your Details</h3>
+          <p>Share your name, passport details, experience and the type of job support you need.</p>
+        </div>
+
+        <div class="step">
+          <h3>Document Checking</h3>
+          <p>We check the required documents and guide you if anything needs to be corrected.</p>
+        </div>
+
+        <div class="step">
+          <h3>Processing Support</h3>
+          <p>We assist with employment visa processing coordination according to the company and official requirements.</p>
+        </div>
+
+        <div class="step">
+          <h3>Final Guidance</h3>
+          <p>Once the process is completed, we guide you about the next steps clearly.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Required Details</h2>
+        <div class="card" style="box-shadow:none;">
+          <ul>
+            <li>Clear passport scan copy</li>
+            <li>Passport size photo</li>
+            <li>CV or work experience details</li>
+            <li>Police Report home Country with UAE MOFA attested</li>
+            <li>Current country and contact number</li>
+            <li>Preferred job category</li>
+            <li>Education and English level details</li>
+          </ul>
+        </div>
+        <br />
+        <p>
+          Send these details on WhatsApp and our team will guide you with the next step.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Need Employment Visa Assistance?</h2>
+      <p>
+        Contact Rantharu Travels today and get clear guidance for your UAE employment visa support.
+      </p>
+      <a class="btn" href="https://wa.me/971542973875?text=Hello%20Rantharu%20Travels%2C%20I%20need%20Employment%20Visa%20Assistance">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>We are ready to help you</p>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-item">
+          <b>Phone / WhatsApp</b><br />
+          +971 54 297 3875<br />
+          +971 50 468 7261<br />
+          +94 78 956 6218
+        </div>
+
+        <div class="contact-item">
+          <b>Email</b><br />
+          Customer.Support@rantharutravels.com<br />
+          rantharutravels@gmail.com<br /><br />
+          <b>Website</b><br />
+          www.rantharutravels.com
+        </div>
+
+        <div class="contact-item">
+          <b>Locations</b><br />
+          UAE - 47, Al Shabah, Sharjah, UAE<br />
+          SL - 367/C/7, Welivita, Kaduwela, Sri Lanka
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-float" href="https://wa.me/971542973875?text=Hello%20Rantharu%20Travels%2C%20I%20need%20Employment%20Visa%20Assistance">WhatsApp</a>
+
+  <footer>
+    © 2023 Rantharu Travels Pvt Ltd. All Rights Reserved.
+  </footer>
+</body>
+</html>
